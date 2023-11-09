@@ -1,7 +1,7 @@
-http://example.com/tags/index.html
-http://example.com/resources/index.html
-http://example.com/categories/index.html
-http://example.com/about/index.html
-http://example.com/README.html
-http://example.com/2023/11/08/hello-world/
-http://example.com/
+http://magyea.github.io/tags/index.html
+http://magyea.github.io/resources/index.html
+http://magyea.github.io/categories/index.html
+http://magyea.github.io/about/index.html
+http://magyea.github.io/README.html
+http://magyea.github.io/2023/11/08/hello-world/
+http://magyea.github.io/
