@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>test</title>
+      <link href="/2023/11/09/test/"/>
+      <url>/2023/11/09/test/</url>
+      
+        <content type="html"><![CDATA[<p>试一下能不能正常用</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> test </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2023/11/08/hello-world/"/>
       <url>/2023/11/08/hello-world/</url>
