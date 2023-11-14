@@ -4,17 +4,75 @@
   
     
     <entry>
-      <title>test</title>
-      <link href="/2023/11/09/test/"/>
-      <url>/2023/11/09/test/</url>
+      <title>测试文件</title>
+      <link href="/2023/11/14/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/"/>
+      <url>/2023/11/14/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/</url>
       
-        <content type="html"><![CDATA[<p>试一下能不能正常用</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="一些在部署文件中遇到的问题"><a href="#一些在部署文件中遇到的问题" class="headerlink" title="一些在部署文件中遇到的问题"></a>一些在部署文件中遇到的问题</h2><ul><li><p><input checked disabled type="checkbox"> 标题没显示，打开后闪退，</p><p>可能是第一次用才这样，现在重新打开好了</p></li><li><p><input checked disabled type="checkbox"> 图片显示问题测试：</p><ul><li><input disabled type="checkbox"> <img src="/2023/11/14/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/Blog\source\img\typora激活.png" alt="typora激活"></li></ul></li></ul>]]></content>
       
       
       
         <tags>
             
             <tag> test </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2023/11/14/typora%E6%BF%80%E6%B4%BB/"/>
+      <url>/2023/11/14/typora%E6%BF%80%E6%B4%BB/</url>
+      
+        <content type="html"><![CDATA[<hr><p>title: typora激活<br>date: 2023-11-14 16:42:29<br>tags: 软件安装</p><hr><h3 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h3><p>三种：</p><ol><li>找个免费版的下</li><li>拿序列号</li><li>替换winmm.dll文件</li></ol><p>第一次用的是3，但老是有瑕疵，1怕没有更新到一些新的功能，决定用法2</p><h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><ol><li>官网下载typora</li><li>（关注公众号ai小智-回md-解压第2个-再解压一次）-得到两个exe文件后放在typora文件夹下，注意那个liscence不要复制过来</li><li>win+r - cmd </li><li><img src="/2023/11/14/typora%E6%BF%80%E6%B4%BB/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20231114170139412.png" alt="image-20231114170139412"></li><li><img src="/2023/11/14/typora%E6%BF%80%E6%B4%BB/Blog\source\img\typora激活.png" alt="typora激活"></li></ol><h3 id="出现的问题"><a href="#出现的问题" class="headerlink" title="出现的问题"></a>出现的问题</h3><ul><li><p><input checked disabled type="checkbox"> new出来的md文件打不开？没安装在C盘，第一次选择一下位置后后面就可以直接打开了</p></li><li><p><input disabled type="checkbox"> new完还是没法编辑，就是输入tag后面的文字后，想另起一行开始写，当字都没打全就键入的地方一直在疯狂的跳动</p></li><li><p><input disabled type="checkbox"> 打开md文件后自动给加上了反转译的符号，能不能一键去掉</p></li><li><p><input disabled type="checkbox"> 从markdownpro复制粘贴不过来一点</p></li><li><p><input disabled type="checkbox"> 一键式缩写打开？</p></li><li><p><input disabled type="checkbox"> 还需要进行初始的设置，使得截图能够在网页版也呈现出来</p><p><a href="https://zhuanlan.zhihu.com/p/645679541">解决Hexo+Github+Typora图片无法正确显示的问题 - 知乎 (zhihu.com)</a></p><p>好像还是没法打开？</p></li><li><p><input checked disabled type="checkbox"> 顺手改了一下浏览器新标签页的初始界面，舒服多了，在设置里面找找就有了</p></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2023/11/14/%E9%A9%AC%E5%8E%9F%E8%AF%BE%E7%A8%8B%E8%AE%BA%E6%96%87/"/>
+      <url>/2023/11/14/%E9%A9%AC%E5%8E%9F%E8%AF%BE%E7%A8%8B%E8%AE%BA%E6%96%87/</url>
+      
+        <content type="html"><![CDATA[<p></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2023/11/14/%E6%8A%A5%E9%94%99%E4%B8%8E%E5%A4%84%E7%90%86/"/>
+      <url>/2023/11/14/%E6%8A%A5%E9%94%99%E4%B8%8E%E5%A4%84%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<p>-–<br> title: 各种报错与解决<br> date: 2023-11-14 09:56:45<br> tags: 报错<br> -–</p><h2 id="已解决"><a href="#已解决" class="headerlink" title="已解决"></a>已解决</h2><ol><li><p>YAMLException: can not read a block mapping entry; a multiline key may not be an implicit key (4:1)</p><p>1 | title: 4.1处理器概述<br>2 | date: 2023-11-14 09:07:02<br>3 | tags:计算机组成原理<br>4 |<br>—–^</p></li></ol><p> tags后面加个空格</p><ol start="2"><li>如果是自己建一个md文件在post文件夹下，最后会有这篇文章，但是在home预览里面这篇文章会被设置成无标题，即便你有写title，这也只会在打开后才出现，所有hexo new的作用不止在于创建，还在于给了他一个home页面的标题</li></ol><h2 id="未解决"><a href="#未解决" class="headerlink" title="未解决"></a>未解决</h2><ol><li>t难道不可以用tab吗，怎么一按就没了</li></ol><p>2.typora把md文件粘贴进去没任何反应，需要用内部的来操作 ，mathpix转出文件后在typora里面渲染不出来，用记事本打开则正常没有任何的反转义，用在线网页的像matrix里面的粘贴过去还能正常的渲染出来，要怎样修改typora才能让这个文件正常渲染，难道说这种粘贴跟上一个问题一样吗，但是一些图片和公式又可以正常渲，，，就是说在不同的编辑器之间粘贴来粘贴去，总是会自动加一些\，像我现在这篇粘过去mdp就格式又乱了。。。<br> 3.mp的渲染跟实际上的网页渲染效果不一样？指换行什么的  </p><p>4.不是我说，，太逆天了，，我辛辛苦苦写了半天的文件，上厕所前还专门把它保存下来了，甚至连修改日期都是正确的，结果回来就得重启？？？关键是还用你typora还打不开一点，全他妈空白了，，，我写错什么了啊(#&#96;O′) 真的垃圾软件，，，体验感甚至还不如记事本。。。<br>不想重新写一遍了，，，气死我了，不就是i想弄一个可以正常写写文章的软件吗，怎么会这么麻烦。。。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>4.1处理器概述</title>
+      <link href="/2023/11/14/4-1%E5%A4%84%E7%90%86%E5%99%A8%E6%A6%82%E8%BF%B0/"/>
+      <url>/2023/11/14/4-1%E5%A4%84%E7%90%86%E5%99%A8%E6%A6%82%E8%BF%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Chap-4-处理器"><a href="#Chap-4-处理器" class="headerlink" title="Chap 4 处理器"></a>Chap 4 处理器</h1><h2 id="框架："><a href="#框架：" class="headerlink" title="框架："></a>框架：</h2><ol><li>先给出处理器是由什么组成，每个部件具体由什么输入输出构成，输入输出之间的数据通路是什么；</li><li>实现单周期</li><li>实现多周期</li><li>流水线</li><li>竞争与冒险</li></ol><h3 id="4-1-处理器概述"><a href="#4-1-处理器概述" class="headerlink" title="4.1 处理器概述"></a>4.1 处理器概述</h3><ul><li>处理器包括 控制器 和 数据通路（运算器）  <ul><li>数据通路：指令执行过程中，数据所经过的路径(包括路径中的部件)——指令的执行部件</li><li>控制器(Control)：对指令的执行部件发出控制信号</li></ul></li><li>控制器的基本功能<ul><li>取指令(控制指令流出— PC)</li><li>分析指令(控制指令分析— IR)</li><li>执行指令，发出各种操作命令<br>  (控制指令执行— REGs和ALU)</li><li>确定下一条指令的地址(控制指<br>  令流向—PC)</li><li>执行环境的建立与保护(控制执行环境的维护—FLAGs&#x2F;PSW，标志位和程序状态字，清零啊之类的操作，来保证程序运行的环境是正常的)</li></ul></li><li>功能的实现<ul><li>数据通路由两类部件组成<ul><li>组合逻辑元件(亦称操作元件)（ALU）  <img src="/2023/11/14/4-1%E5%A4%84%E7%90%86%E5%99%A8%E6%A6%82%E8%BF%B0/1.png" class title="加载失败"></li><li>时序逻辑元件（存储元件(亦称状态元件)）（寄存器，指令存储器，数据存储器）</li></ul></li><li>数据通路的定时</li></ul></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机组成原理 </tag>
             
         </tags>
       
