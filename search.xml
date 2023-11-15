@@ -4,11 +4,68 @@
   
     
     <entry>
+      <title>相关知识领域拓展</title>
+      <link href="/2023/11/15/%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E9%A2%86%E5%9F%9F%E6%8B%93%E5%B1%95/"/>
+      <url>/2023/11/15/%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E9%A2%86%E5%9F%9F%E6%8B%93%E5%B1%95/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h2><ul><li>CS图论</li><li>NP完全问题</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>图</title>
+      <link href="/2023/11/15/%E5%9B%BE/"/>
+      <url>/2023/11/15/%E5%9B%BE/</url>
+      
+        <content type="html"><![CDATA[<h2 id="学习框架"><a href="#学习框架" class="headerlink" title="学习框架"></a>学习框架</h2><p>图的基本概念</p><h2 id="最短路径问题"><a href="#最短路径问题" class="headerlink" title="最短路径问题"></a>最短路径问题</h2><h3 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h3><ul><li><p> 网络 (边赋权图)</p><p> 最短路径问题</p><p> Dijstra 算法</p><p> Warshall 算法</p><p> TSP 问题及近似解</p></li></ul><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>网络 </p><ul><li>边有权重（默认大于0）</li></ul><p>距离矩阵</p><ul><li>以点构成的方阵，ij值为边i到j的权重，没有则为无穷大（最大化问题取负无穷大）</li></ul><p>子集和结点间的距离</p><ul><li><p>在所有点集里划出一个子点集S，那么S跟S外某点的距离为 S中所有的点i 跟 它j 距离dij的最小值</p></li><li><p>S外某点j 跟 Si的距离 为 dji的最小值</p></li></ul><p>带权路径长度</p><ul><li>路上所有边的权值之和，关心的一般是没有重复顶点的</li></ul><p>两个结点间的最短距离</p><ul><li>最短距离 两点间最低的路径长 d( vi ,<em>v</em>j )</li><li>最短路 权值和最低的路（可能多条）</li></ul><h3 id="引理"><a href="#引理" class="headerlink" title="引理"></a>引理</h3><ol><li>最优化原理，一条最短路，截取它的某一段都是最短路</li><li><ul><li><input disabled type="checkbox"> 贪心算法中的引理3，用来说明有多近似</li></ul></li></ol><h3 id="求解最短路"><a href="#求解最短路" class="headerlink" title="求解最短路"></a>求解最短路</h3><h4 id="Dijkstra-算法"><a href="#Dijkstra-算法" class="headerlink" title="- Dijkstra 算法"></a>- Dijkstra 算法</h4><ul><li><p>核心</p><ul><li>构造好了子集，把子集扩充到所有点，集合外的点逐个试探，找到S与vj的最小值</li><li>算法使用的主要数据结构是网络的距离矩阵和一个存储所有结点试探值的 <strong>n</strong> 阶向量 T。</li></ul></li><li><p>过程</p><ul><li>输入，</li><li>让T长度为n，然后初始化为矩阵的第一行，第一个改为0</li><li>找离v1最近的点vm，然后记住d&#x3D;v1到vm的距离</li><li>看vm所在的行加上d有没有比原来T的向量小，有的话，改一下，</li><li>然后找出T中最小且没有加进去的点，把它拉进来</li><li>重复3，4，5，直到所有点都被拉进来</li></ul></li><li><p>SPT，最短距离树，记住结点的加入顺序及带他加入的前一个结点，就可以得到</p></li><li><p>复杂度</p><ul><li>计算复杂度 <strong>O</strong>(<em>n</em>^2)，<em>n</em> &#x3D; |V|。</li></ul></li></ul><h4 id="Warshall-算法"><a href="#Warshall-算法" class="headerlink" title="-Warshall 算法"></a>-Warshall 算法</h4><ul><li><p>核心</p></li><li><p>过程</p><ul><li>input matrix D</li><li>i &#x3D; 1</li><li>j &#x3D; 1</li><li>djk &#x3D; min{djk , dik + dkj}，k &#x3D; 1..n （求有向图道路矩阵这一步是pjk  pjk  (pji  pik), k &#x3D; 1 … n）<ul><li>对于第i次循环，找到第i列中不是无穷的那些行，记这些值为dji（第j列第i行）（关键元素）</li><li>对这些行进行更新，<ul><li>更新是指 将dji+dik(就你最开始选的那一行）跟原先本来在这个位上的djk进行比较，小的话就更新，就一个L型的计算</li></ul></li></ul></li><li>j &#x3D; j+1, if j &lt;&#x3D; n, goto 4</li><li>i &#x3D; i+1, if i &lt;&#x3D; n, goto 3</li><li>Stop</li></ul></li><li><p>优化</p><ul><li>值为无穷大的那些列不会发生迭代，因为i这一行的正无穷的值不可能加完会成为小值，因此对更新没有贡献</li><li>当前值不超过用于比较的同行关键元素的值的元素也不会发生迭代。（L型加法的另一头，就是那个关键元素如果比较大，那也不用再算加法了）</li></ul></li><li><p>复杂度</p><ul><li>计算复杂度 <strong>O</strong>(<em>n</em>^3)，<em>n</em> &#x3D; |V|。</li></ul></li></ul><h3 id="TSP问题"><a href="#TSP问题" class="headerlink" title="TSP问题"></a>TSP问题</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>经过所有的点仅一次的最短路径</p><h4 id="求解算法"><a href="#求解算法" class="headerlink" title="求解算法"></a>求解算法</h4><h5 id="精确算法："><a href="#精确算法：" class="headerlink" title="精确算法："></a>精确算法：</h5><ul><li><p> 分支与界法</p><ul><li><p>过程</p><ul><li><p>初始定界为 +无穷； </p></li><li><ol><li><p>将所有 C(n, 2) 条边按照权值由小到大排列； </p></li><li><p>选尽量靠前的 n 条边，判断其和是否小于定界：</p><p>2.1. 是，判断此 n 条边是否已构成哈密尔顿回路： 五条边每个数字出现两次</p></li></ol><p>   ​2.1.1. 是，则其和为新的定界，转3； </p><p>   ​2.1.2. 否，若保留边不可能构成 H-回路，则删除本分支； 否则按保留&#x2F;删除某未保留边构成下层分支，转2。</p><pre><code>2.2. 否，删除本分支。  </code></pre><p>   3.若各分支中尚有其和小于定界的可分解结点，转2，否则结束。</p></li><li><p>计算复杂度：最坏情况下为 O(n!）</p></li></ul></li></ul></li></ul><h5 id="近似算法："><a href="#近似算法：" class="headerlink" title="近似算法："></a>近似算法：</h5><ul><li><p>约束条件：设城市之间道路长度符合三角不等式，即对任意的结点ij，直接到达比拐弯抹角近</p></li><li><p> 最近邻法，从第一个点出发，找到最近的，来进来，再从新加入的点出发找，最后串起来的就是结果</p></li><li><p>插入法</p><ul><li>先选几个城市作为T，再逐一扩张</li><li>过程<ul><li>初始化小圈子T&#x3D;1，回路链为H&#x3D;（1，1）（先从1到1）</li><li>对于每个圈子外的点，计算它到圈子的距离</li><li>选一个j   来    插入到H，T也相应的扩大1个结点<ul><li> 贪心插入法<ul><li>找一个距离最近的点，这里的距离是由圈外的j点与圈内的t点实现的，原先已有的t1,t,t2，j的插入会导致增加，插左边，增加的是(t1-j-t) - (t1-t),右边增加的是(t-j-t2) -(t-t2),作一下差可以得到”若 wj,t1 - wt,t1&lt;&#x3D; wj,t2 - wt,t2 则 H &#x3D;(…,t1,j,t,t2,…) “</li></ul></li><li> 最近插入法<ul><li>找一个距离最近的点插入到t后面</li></ul></li><li> 最远插入法<ul><li>找一个距离最远的点插入到t后面</li></ul></li></ul></li><li>循环上述过程</li></ul></li></ul></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 离散数学 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>单周期实验</title>
+      <link href="/2023/11/14/%E5%8D%95%E5%91%A8%E6%9C%9F%E5%AE%9E%E9%AA%8C/"/>
+      <url>/2023/11/14/%E5%8D%95%E5%91%A8%E6%9C%9F%E5%AE%9E%E9%AA%8C/</url>
+      
+        <content type="html"><![CDATA[<h2 id="学习流程"><a href="#学习流程" class="headerlink" title="学习流程"></a>学习流程</h2><ol><li><p>跑马灯实验，需要准备什么代码，流程是什么</p></li><li><p>直接看文档</p></li><li><p>看别人的文档</p><p><a href="https://blog.csdn.net/qq_45822589/article/details/117826112">【精选】西工大计组实验单周期CPU_西北工业大学单周期cpu-CSDN博客</a></p></li><li></li></ol><h3 id="看文档中遇到的问题"><a href="#看文档中遇到的问题" class="headerlink" title="看文档中遇到的问题"></a>看文档中遇到的问题</h3><h4 id="各个模块"><a href="#各个模块" class="headerlink" title="各个模块"></a>各个模块</h4><ul><li><h2 id="PC"><a href="#PC" class="headerlink" title="PC"></a>PC</h2><ul><li><input checked disabled type="checkbox"> <ol><li>输入输出变量在图中已经有了，英文缩写对应的在下面的表格里也有了</li><li>always 定义逻辑功能的三种方式</li><li>使用《&#x3D;？非阻塞赋值与阻塞赋值，因为语句的执行是从后往前的，所以c&lt;&#x3D;b指的是b取完之后，等这个模块结束后再一起送给c等其他的 等式左边的字母</li><li>初始化</li><li>不更改？是因为停机指令的要求，那复位是指最开始的时候吧，那跳转指令怎么办–跳转指令的pc默认加4，改变的是地址，靠送进来的下一个地址位置来确定，就是它判断了上一条指令是跳转指令，然后译码会给出下一个指令的地址，所以处理这个的实际部件是最右上角的那个</li><li>posedge clk or negedge Reset时钟上升沿和复位信号下变化的块</li></ol></li><li><input disabled type="checkbox"> <ol><li>切片的语法写在前还是后</li><li></li></ol></li></ul></li><li><p>IM</p><ul><li>这个部件是在图的pc旁边那个，这个部件实现的功能是将指令的地址转译成为这个地址存放的内容，具体的内容是一条指令的01机器代码</li></ul><hr><p>文字</p><ul><li><p><input checked disabled type="checkbox"> 为什么要设计内含rom</p><p>使用只读存储器来存储程序的机器码，毕竟指令的内容在接下来不会被修改到，并且需要反复使用（？——所以先存起来）</p></li><li><p><input disabled type="checkbox"> 为什么是96个字节</p></li><li><p><input disabled type="checkbox"> 为什么用rom来存放测试程序段的机器码</p></li><li><p><input disabled type="checkbox"> 怎么得到机器码</p></li><li><p><input disabled type="checkbox"> 其他部件也需要吗</p></li><li><p><input disabled type="checkbox"> 啥伪指令、</p></li><li><p><input disabled type="checkbox"> 附录b？</p></li></ul><hr><p>代码</p><ul><li><p><input disabled type="checkbox"> read本地内存的代码格式</p></li><li><p><input checked disabled type="checkbox"> 96个字节？难道【】并不是同一单位的？还是说其实是96位，文字部分写错了？，，没错是，是二维数组</p></li><li><p><input checked disabled type="checkbox"> reg [7:0] ROM [0:95];</p><p>这行代码声明了一个 reg 类型的<strong>二维</strong>数组 ROM，每个元素都是 8 位宽，数组范围是 [0:95]，共有 96 个元素。这里的 ROM 就是用来存储指令机器码的只读存储器。</p></li><li><p><input disabled type="checkbox"> 为什么采用二维？</p></li><li><p><input checked disabled type="checkbox"> 读文件也要initial？错</p><p>这段 initial 块中的 $readmemb 函数调用用于从指定的文件中读取数据并初始化 ROM 数组。函数参数 “E:&#x2F;_Vivado&#x2F;MIPS_CPU_Design&#x2F;SingleCycleCPU&#x2F;test_instructions.txt” 是指定的文件路径，该文件中的数据将被读取到 ROM 中。</p></li><li><p><input disabled type="checkbox"> 为什么rom的下标是iaddr+0，1，2，3</p></li><li><p><input checked disabled type="checkbox"> 为什么要分成八个、</p><p>指令存储器和数据存储器存储单元宽度一律使用8位，即一个字节的存储单位。不能使用32位作为存储器存储单元宽度。（来自实验要求写的），所以要分成八个位八个位的存</p></li><li><p><input disabled type="checkbox"> 为什么用到了寄存器</p></li><li><p>[ ]</p></li></ul></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机组成原理实验 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>测试文件</title>
       <link href="/2023/11/14/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/"/>
       <url>/2023/11/14/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/</url>
       
-        <content type="html"><![CDATA[<h2 id="一些在部署文件中遇到的问题"><a href="#一些在部署文件中遇到的问题" class="headerlink" title="一些在部署文件中遇到的问题"></a>一些在部署文件中遇到的问题</h2><ul><li><p><input checked disabled type="checkbox"> 标题没显示，打开后闪退，</p><p>可能是第一次用才这样，现在重新打开好了</p></li><li><p><input checked disabled type="checkbox"> 图片显示问题测试：</p><ul><li><input disabled type="checkbox"> <img src="/2023/11/14/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/Blog\source\img\typora激活.png" alt="typora激活"></li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="一些在部署文件中遇到的问题"><a href="#一些在部署文件中遇到的问题" class="headerlink" title="一些在部署文件中遇到的问题"></a>一些在部署文件中遇到的问题</h2><ul><li><p><input checked disabled type="checkbox"> 标题没显示，打开后闪退，</p><p>可能是第一次用才这样，现在重新打开好了</p></li><li><p><input checked disabled type="checkbox"> 图片显示问题测试：</p><ul><li><input disabled type="checkbox"> <img src="/2023/11/14/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/Blog\source\img\typora激活.png" alt="typora激活"></li></ul></li></ul><p><img src="/2023/11/14/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/Blog\source\img\image-20231115111237484.png" alt="image-20231115111237484"></p><p><img src="/2023/11/14/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/Blog\source\img\测试文件\image-20231115111659561.png" alt="image-20231115111659561"></p><p><img src="/2023/11/14/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/image-20231115111714341.png" alt="image-20231115111714341"></p><p>只有图三可以，但是代价是我每次都得点格式-图像设置。。。。</p><p><img src="/2023/11/14/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/Blog\source\img\测试文件\image-20231115112526812.png" alt="image-20231115112526812"></p><p>还是不行。。。</p><p><img src="/2023/11/14/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/Blog\source_posts\测试文件\image-20231115140208288.png" alt="image-20231115140208288"></p><p>确实复制过去了，但我的问题是在这个文件夹下也显示不了，，需要研究一下格式根目录可以用什么来平替</p><p><img src="/2023/11/14/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/Blog\source_posts\测试文件\image-20231115140938707.png" alt="image-20231115140938707"></p><p>都做到这一步了还是不行。。。</p><p>应该是插件的问题</p><p><img src="/2023/11/14/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/Blog\source_posts\测试文件\image-20231115141259084.png" alt="image-20231115141259084"></p><p>尼玛，还是不行，，教程一模一样，，，结果什么都出不了</p><p><img src="/2023/11/14/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/Blog\source_posts\测试文件\image-20231115142627836.png" alt="image-20231115142627836"></p>]]></content>
       
       
       
@@ -66,7 +123,7 @@
       <link href="/2023/11/14/4-1%E5%A4%84%E7%90%86%E5%99%A8%E6%A6%82%E8%BF%B0/"/>
       <url>/2023/11/14/4-1%E5%A4%84%E7%90%86%E5%99%A8%E6%A6%82%E8%BF%B0/</url>
       
-        <content type="html"><![CDATA[<h1 id="Chap-4-处理器"><a href="#Chap-4-处理器" class="headerlink" title="Chap 4 处理器"></a>Chap 4 处理器</h1><h2 id="框架："><a href="#框架：" class="headerlink" title="框架："></a>框架：</h2><ol><li>先给出处理器是由什么组成，每个部件具体由什么输入输出构成，输入输出之间的数据通路是什么；</li><li>实现单周期</li><li>实现多周期</li><li>流水线</li><li>竞争与冒险</li></ol><h3 id="4-1-处理器概述"><a href="#4-1-处理器概述" class="headerlink" title="4.1 处理器概述"></a>4.1 处理器概述</h3><ul><li>处理器包括 控制器 和 数据通路（运算器）  <ul><li>数据通路：指令执行过程中，数据所经过的路径(包括路径中的部件)——指令的执行部件</li><li>控制器(Control)：对指令的执行部件发出控制信号</li></ul></li><li>控制器的基本功能<ul><li>取指令(控制指令流出— PC)</li><li>分析指令(控制指令分析— IR)</li><li>执行指令，发出各种操作命令<br>  (控制指令执行— REGs和ALU)</li><li>确定下一条指令的地址(控制指<br>  令流向—PC)</li><li>执行环境的建立与保护(控制执行环境的维护—FLAGs&#x2F;PSW，标志位和程序状态字，清零啊之类的操作，来保证程序运行的环境是正常的)</li></ul></li><li>功能的实现<ul><li>数据通路由两类部件组成<ul><li>组合逻辑元件(亦称操作元件)（ALU）  <img src="/2023/11/14/4-1%E5%A4%84%E7%90%86%E5%99%A8%E6%A6%82%E8%BF%B0/1.png" class title="加载失败"></li><li>时序逻辑元件（存储元件(亦称状态元件)）（寄存器，指令存储器，数据存储器）</li></ul></li><li>数据通路的定时</li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="Chap-4-处理器"><a href="#Chap-4-处理器" class="headerlink" title="Chap 4 处理器"></a>Chap 4 处理器</h1><h2 id="框架："><a href="#框架：" class="headerlink" title="框架："></a>框架：</h2><ol><li>先给出处理器是由什么组成，每个部件具体由什么输入输出构成，输入输出之间的数据通路是什么；</li><li>实现单周期</li><li>实现多周期</li><li>流水线</li><li>竞争与冒险</li></ol><h3 id="4-1-处理器概述"><a href="#4-1-处理器概述" class="headerlink" title="4.1 处理器概述"></a>4.1 处理器概述</h3><ul><li>处理器包括 控制器 和 数据通路（运算器）  <ul><li>数据通路：指令执行过程中，数据所经过的路径(包括路径中的部件)——指令的执行部件</li><li>控制器(Control)：对指令的执行部件发出控制信号</li></ul></li><li>控制器的基本功能<ul><li>取指令(控制指令流出— PC)</li><li>分析指令(控制指令分析— IR)</li><li>执行指令，发出各种操作命令<br>  (控制指令执行— REGs和ALU)</li><li>确定下一条指令的地址(控制指<br>  令流向—PC)</li><li>执行环境的建立与保护(控制执行环境的维护—FLAGs&#x2F;PSW，标志位和程序状态字，清零啊之类的操作，来保证程序运行的环境是正常的)</li></ul></li><li>功能的实现<ul><li>数据通路由两类部件组成<ul><li>组合逻辑元件(亦称操作元件)（ALU）  <img src="/2023/11/14/4-1%E5%A4%84%E7%90%86%E5%99%A8%E6%A6%82%E8%BF%B0/11/14/4-1%E5%A4%84%E7%90%86%E5%99%A8%E6%A6%82%E8%BF%B0/1.png" class title="加载失败"></li><li>时序逻辑元件（存储元件(亦称状态元件)）（寄存器，指令存储器，数据存储器）</li></ul></li><li>数据通路的定时</li></ul></li></ul>]]></content>
       
       
       

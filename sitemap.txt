@@ -1,4 +1,7 @@
 http://magyea.github.io/2023/11/14/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/
+http://magyea.github.io/2023/11/15/%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E9%A2%86%E5%9F%9F%E6%8B%93%E5%B1%95/
+http://magyea.github.io/2023/11/15/%E5%9B%BE/
+http://magyea.github.io/2023/11/14/%E5%8D%95%E5%91%A8%E6%9C%9F%E5%AE%9E%E9%AA%8C/
 http://magyea.github.io/2023/11/14/typora%E6%BF%80%E6%B4%BB/
 http://magyea.github.io/2023/11/14/%E6%8A%A5%E9%94%99%E4%B8%8E%E5%A4%84%E7%90%86/
 http://magyea.github.io/2023/11/14/%E9%A9%AC%E5%8E%9F%E8%AF%BE%E7%A8%8B%E8%AE%BA%E6%96%87/
@@ -11,4 +14,7 @@ http://magyea.github.io/README.html
 http://magyea.github.io/2023/11/08/hello-world/
 http://magyea.github.io/
 http://magyea.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/
+http://magyea.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C/
+http://magyea.github.io/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/
+http://magyea.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/
 http://magyea.github.io/tags/test/
